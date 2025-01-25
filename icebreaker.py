@@ -11,7 +11,7 @@ if __name__ == "__main__":
     summary_template = """
     given the LinkedIn information {information} about a person from, I want you to create:
     1. A Short Summary
-    2. Two interesting facts about them
+    2. A paragraph about why they are an excellent product management leader
     """
     summary_prompt_template = PromptTemplate(
         input_variables=["information"], template=summary_template

@@ -15,17 +15,24 @@ def scrape_linkedin_profile(linked_profile_url: str, mock: bool = False):
             timeout=10
         )
     else:
-#        api_endpoint = "https://api.scrapin.io/enrichment/profile"
         api_endpoint = "https://nubela.co/proxycurl/api/v2/linkedin"
-        params = {
-            "apikey": os.environ["SCRAPIN_API_KEY"],
-            "linkedinurl": linked_profile_url
-        }
+        header_dic = {"Authorization": f'Bearer {os.environ.get("PROXYCURL_API_KEY")}'}
         response = requests.get(
             api_endpoint,
-            params=params,
-            timeout=10
+            params={"url": linked_profile_url},
+            headers=header_dic,
+            timeout=10,
         )
+    #        api_endpoint = "https://api.scrapin.io/enrichment/profile"
+    #        params = {
+#            "apikey": os.environ["SCRAPIN_API_KEY"],
+#            "linkedinurl": linked_profile_url
+#        }
+#        response = requests.get(
+#            api_endpoint,
+#            params=params,
+#            timeout=10
+#        )
 
     data = response.json()
     data = {

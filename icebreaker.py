@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
-from langchain_ollama import ChatOllama
+#from langchain_ollama import ChatOllama
 
 from third_parties.linkedin_py import scrape_linkedin_profile
 from agents.linkedin_lookup_agent import lookup as linkedin_lookup_agent

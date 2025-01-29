@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def scrape_linkedin_profile(linked_profile_url: str, mock: bool = True):
+def scrape_linkedin_profile(linked_profile_url: str, mock: bool = False):
     """scrape information from LinkedIn profiles
         Manually scrape the information from the LinkedIn profile"""
 
@@ -15,7 +15,8 @@ def scrape_linkedin_profile(linked_profile_url: str, mock: bool = True):
             timeout=10
         )
     else:
-        api_endpoint = "https://api.scrapin.io/enrichment/profile"
+#        api_endpoint = "https://api.scrapin.io/enrichment/profile"
+        api_endpoint = "https://nubela.co/proxycurl/api/v2/linkedin"
         params = {
             "apikey": os.environ["SCRAPIN_API_KEY"],
             "linkedinurl": linked_profile_url

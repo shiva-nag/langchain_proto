@@ -1,6 +1,5 @@
 import os
 from dotenv import load_dotenv
-from tools.tools import get_profile_url_tavily
 load_dotenv()
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
@@ -23,7 +22,6 @@ def lookup(name: str) -> str:
     )
     tools_for_agent = [
         Tool(
-            name="Crawl Google & find the most relevant linkedin profile page",
             func=get_profile_url_tavily,
             description="useful for when you need get the Linkedin Page URL",
         )

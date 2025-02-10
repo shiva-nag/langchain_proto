@@ -33,7 +33,7 @@ def ice_break_with(name: str) -> str:
 if __name__ == "__main__":
     load_dotenv()
 
-    print("Ice Breaker Enter")
+    print("Ice Breaker")
     ice_break_with(name="Shiva Nagarajan Tekion")
 
 
